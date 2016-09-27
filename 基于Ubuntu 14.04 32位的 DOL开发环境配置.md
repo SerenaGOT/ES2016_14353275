@@ -123,7 +123,7 @@ DOL 有三个基本的功能：
 
    修改build_zip.xml文件，可以使用gedit或者vim，要注意用sudo才有权限修改
 
-   ```sh
+   ```shell
    sudo gedit build_zip.xml
    //或者
    sudo vim build_zip.xml 
@@ -140,7 +140,7 @@ DOL 有三个基本的功能：
 
    继续在当前目录下输入指令
 
-   ```sh
+   ```shell
    ant -f build_zip.xml all
    ```
 
