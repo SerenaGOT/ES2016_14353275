@@ -148,7 +148,7 @@ DOL 有三个基本的功能：
 
    然后可以试着运行第一个例子，进入build/bin/mian，运行下面的指令
 
-   ```sh
+   ```shell
    cd build/bin/mian
    ant -f runexample.xml -Dnumber=1
    ```
