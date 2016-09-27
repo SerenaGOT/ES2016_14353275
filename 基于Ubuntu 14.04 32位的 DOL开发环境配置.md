@@ -45,8 +45,7 @@ DOL 有三个基本的功能：
    sudo wget http://www.accellera.org/images/downloads/standards/systemc/systemc-2.3.1.tgz
    sudo wget http://www.tik.ee.ethz.ch/~shapes/downloads/dol_ethz.zip
    ```
-   ​
-
+   
 3. 解压文件
 
    确认处于home文件目录下，首先创建dol文件夹：
@@ -66,9 +65,7 @@ DOL 有三个基本的功能：
    ```sh
    tar -zxvf systemc-2.3.1.tgz
    ```
-
-   ​
-
+   
 4. 编译systemc
 
    解压后进入systems-2.3.1的目录下
@@ -135,7 +132,7 @@ DOL 有三个基本的功能：
    <property name="systemc.inc" value="YYY/include"/>
    <property name="systemc.lib" value="YYY/lib-linux/libsystemc.a"/>
    ```
-
+   
 5. 编译dol
 
    继续在当前目录下输入指令
