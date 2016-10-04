@@ -1,6 +1,3 @@
-# ES2016_14353275
-Embedded System Design Homework Repository
-
 # 基于Ubuntu 14.04  32位的 DOL开发环境配置
 
 
@@ -42,14 +39,76 @@ DOL 有三个基本的功能：
      - 易于维护、书写，结构简单，可集成到开发环境
    - __Openjdk-7-jdk__ ：在Java平台构建的JAVA开发环境（JDK）的开源版本
 
-2. 开始安装前需要先准备好安装文件，包括systemc-2.3.1.tgz 和dol_ethz.zip，可以先行下载再放入ubuntu的home文件夹中，或者直接在命令行输入下面的代码：
+2. Java的补充配置
+
+   openjdk运行不了就采取手动下载Java安装包的方法，网址在[官网](http://www.oracle.com/technetwork/java/javase/downloads/index.html), 我的系统为32位，所以我选择了x86的版本（jdk-8u101-linux-i586.tar.gz），下载之后把压缩包放入ubuntu的home文件夹中
+
+   打开命令行， 解压压缩包到/usr/lib/java文件夹
+
+   ```sh
+   cd /usr/lib
+   sudo mkdir java
+   sudo tar xvf ./jdk-8u101-linux-i586.tar -C /usr/lib/java
+   ```
+
+   文件夹重命名为jdk8
+
+   ```sh
+   cd /usr/lib/java
+   sudo mv jdk1.8.0_40/ jdk8     //此处的jdk1.8.0_40根据实际名字书写
+   ```
+
+   修改环境变量
+
+   ```sh
+   sudo gedit ~/.bashrc
+   ```
+
+   在文件末尾添加jdk文件路径
+
+   ```sh
+   export JAVA_HOME=/usr/lib/java/jdk8
+   export JRE_HOME=${JAVA_HOME}/jre
+   export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+   export PATH=${JAVA_HOME}/bin:$PATH
+   ```
+
+   保存退出，输入下面命令使之生效
+
+   ```sh
+   source ~/.bashrc
+   ```
+
+   之后配置默认的JDK
+
+   ```sh
+   sudo update-alternatives --install /usr/bin/java java /usr/lib/java/jdk8/bin/java 300
+   sudo update-alternatives --install /usr/bin/javac javac /usr/lib/java/jdk8/bin/javac 300
+   ```
+
+   查看当前各种JDK版本和配置: 链接组 java (提供 /usr/bin/java)中只有一个选项：/usr/lib/java/jdk8/bin/java ，无需配置。
+
+   ```sh
+   sudo update-alternatives --config java
+   ```
+
+   最后通过命令看配置是否成功，成功就会有java对应的各种指令信息
+
+   ```sh
+   java -version	# 查看JDK版本
+   java
+   javac
+   ```
+
+3. 开始安装前需要先准备好安装文件，包括systemc-2.3.1.tgz 和dol_ethz.zip，可以先行下载再放入ubuntu的home文件夹中，或者直接在命令行输入下面的代码：
 
    ```sh
    sudo wget http://www.accellera.org/images/downloads/standards/systemc/systemc-2.3.1.tgz
    sudo wget http://www.tik.ee.ethz.ch/~shapes/downloads/dol_ethz.zip
    ```
-   
-3. 解压文件
+   ​
+
+4. 解压文件
 
    确认处于home文件目录下，首先创建dol文件夹：
 
@@ -68,8 +127,10 @@ DOL 有三个基本的功能：
    ```sh
    tar -zxvf systemc-2.3.1.tgz
    ```
-   
-4. 编译systemc
+
+   ​
+
+5. 编译systemc
 
    解压后进入systems-2.3.1的目录下
 
@@ -83,7 +144,6 @@ DOL 有三个基本的功能：
    mkdir objdir
    ```
 
-
    用下面的命令运行configure（使其根据系统环境设置参数，用于编译）
 
    ```
@@ -92,16 +152,16 @@ DOL 有三个基本的功能：
 
    接着我们可以进行编译
 
-   ```sh
+```sh
    sudo make install
-   ```
+```
 
    编译之后退到上一层目录
 
-   ```sh
+```sh
    cd ..
    ls
-   ```
+```
 
    文件目录如下（此为32位系统）
 
@@ -117,30 +177,30 @@ DOL 有三个基本的功能：
 
    接着进入dol文件夹
 
-   ```sh
+```sh
    cd ../dol
-   ```
+```
 
    修改build_zip.xml文件，可以使用gedit或者vim，要注意用sudo才有权限修改
 
-   ```shell
+```sh
    sudo gedit build_zip.xml
    //或者
    sudo vim build_zip.xml 
-   ```
+```
 
    在文件中找到以下两句话，把YYY部分的路径改为之前的pwd保存的结果(32位系统)，对于64位的系统，lib-linux要改成lib-linux64
 
-   ```c
+```c
    <property name="systemc.inc" value="YYY/include"/>
    <property name="systemc.lib" value="YYY/lib-linux/libsystemc.a"/>
-   ```
-   
+```
+
 5. 编译dol
 
    继续在当前目录下输入指令
 
-   ```shell
+   ```sh
    ant -f build_zip.xml all
    ```
 
@@ -148,7 +208,7 @@ DOL 有三个基本的功能：
 
    然后可以试着运行第一个例子，进入build/bin/mian，运行下面的指令
 
-   ```shell
+   ```sh
    cd build/bin/mian
    ant -f runexample.xml -Dnumber=1
    ```
@@ -160,4 +220,3 @@ DOL 有三个基本的功能：
    ​
 
    至此全部配置完成。
-
