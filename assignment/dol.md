@@ -42,7 +42,7 @@ i = i*i*i;
 ​	运行例子的结果如下（1-19的四次方）：
 
 
-![example2](http://p1.bpimg.com/567571/982c941fe0855dfc.png)
+![](http://p1.bqimg.com/567571/f41fdd4d10e3b43b.png)
 
 
 3）扩展：修改example1中的文件名
