@@ -35,12 +35,13 @@ i = i*i*i;
 ​	修改 dol/examples/example2/example.xml, 把原来的value=“3”改为value="2",即可实现减少一个迭代的模块。
 
 ```xml
-<processnetwork xsi:schemaLocation="http://www.tik.ee.ethz.ch/~shapes/schema/PROCESSNETWORK http://www.tik.ee.ethz.ch/~shapes/schema/processnetwork.xsd" name="example2"><variable value="2" name="N"/>
+<processnetwork xsi:schemaLocation="http://www.tik.ee.ethz.ch/~shapes/schema/PROCESSNETWORK http://www.tik.ee.ethz.ch/~shapes/schema/processnetwork.xsd" name="example2">
+<variable value="2" name="N"/>
 ```
 
 ​	运行例子的结果如下（1-19的四次方）：
 
-![](http://p1.bpimg.com/567571/982c941fe0855dfc.png)
+![example2](http://p1.bpimg.com/567571/982c941fe0855dfc.png)
 
 3）扩展：修改example1中的文件名
 
