@@ -41,7 +41,9 @@ i = i*i*i;
 
 ​	运行例子的结果如下（1-19的四次方）：
 
+
 ![example2](http://p1.bpimg.com/567571/982c941fe0855dfc.png)
+
 
 3）扩展：修改example1中的文件名
 
