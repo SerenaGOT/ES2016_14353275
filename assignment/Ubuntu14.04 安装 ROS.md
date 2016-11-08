@@ -1,3 +1,5 @@
+
+
 # Ubuntu14.04 安装 ROS
 
 本次安装完全按照[官网的教程](http://wiki.ros.org/jade/Installation/Ubuntu)实现。
@@ -83,3 +85,42 @@ apt-get source ros-jade-laser-pipeline
 ```
 
 如果获取不了可以直接去github下载。点击[此处](https://github.com/ros-perception/laser_pipeline)获取。
+
+
+
+## 8.验证ros的安装
+
+首先可以查找ros的软件包相关信息（软件包都放在/opt/ros/）
+
+```sh
+rospack find stereo_msgs
+```
+
+ 显示可以找到文件包。
+
+![](http://www.serena.pub/wp-content/uploads/2016/11/1.png)
+
+然后我们可以查看环境变量
+
+```sh
+export | grep ROS
+```
+
+可以看到
+
+![](http://www.serena.pub/wp-content/uploads/2016/11/2.png)
+
+我们还可以检查ros系统情况
+
+```sh
+roswtf
+```
+
+可以看到
+
+![](http://www.serena.pub/wp-content/uploads/2016/11/3.png)
+
+
+
+**至此ROS的验证就基本完成了。**
+
