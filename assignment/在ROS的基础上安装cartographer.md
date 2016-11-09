@@ -91,5 +91,6 @@ roslaunch cartographer_ros demo_backpack_2d.launch bag_filename:=${HOME}/Downloa
 ```
 
 运行结果大致如图下的效果 
+
 ![cartRes](http://www.serena.pub/wp-content/uploads/2016/11/cartRes.jpg)
 
