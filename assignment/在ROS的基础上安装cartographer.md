@@ -72,6 +72,10 @@ cd ..
 catkin_make
 ```
 
+结果如下
+
+![](http://www.serena.pub/wp-content/uploads/2016/11/res.png)
+
 到这里所有安装步骤都完成了。
 
 
@@ -90,7 +94,10 @@ wget https://storage.googleapis.com/cartographer-public-data/bags/backpack_2d/ca
 roslaunch cartographer_ros demo_backpack_2d.launch bag_filename:=${HOME}/Downloads/cartographer_paper_deutsches_museum.bag
 ```
 
-运行结果大致如图下的效果 
+运行结果大致如图下的效果
 
-![cartRes](http://www.serena.pub/wp-content/uploads/2016/11/cartRes.jpg)
 
+
+ ![cartRes](http://www.serena.pub/wp-content/uploads/2016/11/cartRes.jpg)
+
+![](http://www.serena.pub/wp-content/uploads/2016/11/cart_res3.png)
