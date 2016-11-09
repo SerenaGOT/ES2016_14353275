@@ -90,5 +90,5 @@ wget https://storage.googleapis.com/cartographer-public-data/bags/backpack_2d/ca
 roslaunch cartographer_ros demo_backpack_2d.launch bag_filename:=${HOME}/Downloads/cartographer_paper_deutsches_museum.bag
 ```
 
-运行结果大致如图下的效果 ![cartRes](/Users/admin/Desktop/cartRes.jpg)
+运行结果大致如图下的效果 ![cartRes](http://www.serena.pub/wp-content/uploads/2016/11/cartRes.jpg)
 
